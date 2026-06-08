@@ -1,0 +1,435 @@
+/* Global Styles */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-btn {
+    cursor: pointer;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #FFE8D6 0%,
+        #E9D5FF 100%
+    );
+
+    font-family: Arial, sans-serif;
+
+    color: #374151;
+}
+
+p {
+    color: #6B7280;
+}
+/* =====================
+   BUTTON STYLES
+===================== */
+
+button {
+    padding: 12px 22px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* Logout */
+
+.logout-btn {
+
+    background: #EF4444;
+
+    color: white;
+
+}
+
+
+/* Dashboard Buttons */
+
+/* Dashboard Buttons */
+
+#createPostBtn {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+
+
+#yourBlogsBtn,
+#viewBlogsBtn {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+/* =====================
+   CREATE POST FORM
+===================== */
+
+
+#createPostForm {
+
+    width: 700px;
+
+    margin: 30px auto;
+
+    background: #d4addb;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+.create-post-form input,
+.create-post-form textarea {
+
+    width: 90%;
+
+    background: white;
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 8px;
+
+    padding: 12px;
+
+    font-size:16px;
+
+}
+
+
+/* Create button inside form */
+
+.create-post-form button {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+
+
+/* =====================
+   BLOG CARDS
+===================== */
+
+
+.blog-card {
+
+    background:rgb(171, 116, 91);
+
+    border-radius:16px;
+
+    border:1px solid #E9D5FF;
+
+    padding:25px;
+
+    margin:20px;
+
+    box-shadow:
+    0 6px 20px rgba(0,0,0,0.08);
+
+}
+
+
+/* =====================
+   COMMENTS
+===================== */
+
+
+.comment-box {
+
+    background:#FDF4FF;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-top:15px;
+
+}
+/* Authentication Pages */
+
+
+.auth-container {
+
+    width:400px;
+
+    margin:120px auto;
+
+    text-align:center;
+
+    background:#FFFAF7;
+
+    padding:35px;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.auth-container input {
+
+    width:85%;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #dbeafe;
+
+}
+
+
+
+#registerBtn {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+
+
+
+#loginBtn {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+/* =====================
+   LOGIN REGISTER PAGES
+===================== */
+
+
+.auth-container {
+
+    width: 420px;
+
+    background:#FFFAF7;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.12);
+
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    text-align:center;
+
+}
+
+
+
+.auth-container h2 {
+
+    color:#374151;
+
+}
+
+
+
+.auth-container input {
+
+    width:90%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #E9D5FF;
+
+    background:white;
+
+    font-size:16px;
+
+}
+
+
+
+.auth-container button {
+
+    width:90%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#C084FC;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+
+.auth-container button:hover {
+
+    background:#A855F7;
+
+}
+
+
+.auth-container p {
+
+    color:#6B7280;
+
+}
+/* =====================
+   POST ACTION BUTTONS
+===================== */
+
+
+.delete-btn,
+.update-btn,
+.comment-btn {
+
+    background:#C084FC;
+
+    color:white;
+
+}
+/* =====================
+   BLOG CARDS
+===================== */
+
+
+.blog-card {
+
+    background:white;
+
+    border-radius:16px;
+
+    border:1px solid #E9D5FF;
+
+    padding:25px;
+
+    margin:25px auto;
+
+    width:700px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.08);
+
+}
+
+
+.blog-card h3 {
+
+    color:#374151;
+
+}
+
+
+.blog-card p {
+
+    color:#6B7280;
+
+}
+
+
+/* =====================
+   COMMENTS
+===================== */
+
+
+.comments-section {
+
+    background:#FDF4FF;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-top:20px;
+
+}
+
+
+.comments-section p {
+
+    background:white;
+
+    padding:10px;
+
+    border-radius:8px;
+
+}
+/* =====================
+   USER COMMENT BOX
+===================== */
+
+
+.user-comment-box {
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.06);
+
+}
+
+
+.user-comment-box strong {
+
+    color:#374151;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+
+.user-comment-box p {
+
+    background:transparent;
+
+    padding:5px;
+
+    margin:5px 0;
+
+    color:#6B7280;
+
+}

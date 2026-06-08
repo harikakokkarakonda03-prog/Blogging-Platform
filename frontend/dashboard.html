@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+</head>
+
+<body>
+
+   
+
+   <div class="header">
+
+    <h2 id="welcomeMessage"></h2>
+
+    <button
+        class="logout-btn"
+        onclick="logout()">
+        Logout
+    </button>
+
+</div>
+
+    <hr>
+
+    <div style="margin-top:100px;">
+
+        <button  id="yourBlogsBtn" onclick="window.location.href='create-post.html'">
+    Your Blog Posts
+</button>
+        <br><br>
+
+       <button  id="viewBlogsBtn" onclick="window.location.href='view-posts.html'">
+    View Blog Posts
+</button>
+    </div>
+
+    <div
+        style="
+            text-align:center;
+            margin-top:120px;
+        ">
+
+        <button  id="createPostBtn"
+        onclick="showCreatePost()">
+    Create Blog Post
+</button>
+
+<div
+    id="createPostForm"
+    style="
+        display:none;
+        text-align:center;
+        margin-top:30px;
+    "
+>
+    <h3>Create Blog Post</h3>
+
+    <input
+        id="title"
+        placeholder="Post Title"
+    >
+
+    <br><br>
+
+    <textarea
+        id="content"
+        placeholder="Post Content"
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="createPost()">
+    Create
+</button>
+
+</div>
+    </div>
+
+    <script>
+
+        const userId = localStorage.getItem("userId");
+
+        if (!userId) {
+            window.location.href = "login.html";
+        }
+
+        const userName = localStorage.getItem("userName");
+
+        document.getElementById("welcomeMessage").innerText =
+            `Welcome ${userName}`;
+
+        function logout() {
+
+            localStorage.removeItem("userId");
+            localStorage.removeItem("userName");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("token");
+
+            window.location.href = "login.html";
+        }
+
+        function showCreatePost() {
+
+    const form =
+        document.getElementById(
+            "createPostForm"
+        );
+
+    if (form.style.display === "none") {
+
+        form.style.display = "block";
+
+    } else {
+
+        form.style.display = "none";
+
+    }
+}
+async function createPost() {
+
+    const response = await fetch(
+        "http://localhost:5000/api/posts",
+        {
+            method: "POST",
+           headers: {
+    "Content-Type": "application/json",
+    "Authorization": localStorage.getItem("token")
+},
+            body: JSON.stringify({
+
+                userId: localStorage.getItem("userId"),
+
+                title: document.getElementById("title").value,
+
+                content: document.getElementById("content").value
+
+            })
+        }
+    );
+
+   const data = await response.json();
+
+console.log(data);
+
+alert("Blog Created Successfully");
+
+    document.getElementById("title").value = "";
+
+    document.getElementById("content").value = "";
+
+}
+    </script>
+
+
+</body>
+
+</html>
