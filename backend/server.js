@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 const client = require("./config/database");
@@ -14,6 +15,11 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(
+    express.static(
+        path.join(__dirname, "../frontend")
+    )
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/posts", postRoutes);
@@ -32,12 +38,34 @@ client.connect()
         console.log(error.message);
     });
 
-app.get("/", (req, res) => {
-    res.send("Blog Platform Backend Running");
+
+
+
+
+
+const PORT = process.env.PORT || 5000;
+
+
+if (process.env.NODE_ENV !== "production") {
+
+    app.listen(PORT,()=>{
+
+        console.log(
+            `Server running on port ${PORT}`
+        );
+
+    });
+
+}
+app.get("/", (req,res)=>{
+
+    res.sendFile(
+        path.join(
+            __dirname,
+            "../frontend/login.html"
+        )
+    );
+
 });
 
-const PORT = process.env.PORT;
-
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+module.exports = app;
