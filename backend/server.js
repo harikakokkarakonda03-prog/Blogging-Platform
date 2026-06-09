@@ -62,7 +62,7 @@ app.get("/", (req,res)=>{
     res.sendFile(
         path.join(
             __dirname,
-            "../frontend/login.html"
+            "../frontend/register.html"
         )
     );
 
